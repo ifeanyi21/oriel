@@ -25,7 +25,7 @@ export default function Header() {
       onMenuOpenChange={setIsMenuOpen}
       position="static"
       isBlurred={true}
-      className="fixed"
+      className="fixed shadow"
     >
       <NavbarContent>
         <NavbarMenuToggle
