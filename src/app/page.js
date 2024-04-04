@@ -25,25 +25,25 @@ export default function Home() {
     {
       heading: "Promote Your Product & Brand.",
       text: "Elevate your brand visibility and product recognition through strategic marketing campaigns.",
-      icon: <IoStar className="sm:h-20 sm:w-20 h-10 w-10 p-3 text-white" />,
+      icon: <IoStar className="sm:h-20 sm:w-20 h-10 w-10 p-3 text-blue-500" />,
     },
     {
       heading: "Growing & Scale Up Businesses",
       text: "Unlock sustainable growth and scalability for your business with data-driven strategies.",
       icon: (
-        <PiChartLineUpBold className="sm:h-20 sm:w-20 h-10 w-10 p-3 text-white" />
+        <PiChartLineUpBold className="sm:h-20 sm:w-20 h-10 w-10 p-3 text-blue-500" />
       ),
     },
     {
       heading: "Success Campaign on Social",
       text: "Craft compelling social media campaigns that resonate with your target audience.",
-      icon: <BsStars className="sm:h-20 sm:w-20 h-10 w-10 p-3 text-white" />,
+      icon: <BsStars className="sm:h-20 sm:w-20 h-10 w-10 p-3 text-blue-500" />,
     },
   ];
   return (
     <Layout>
-      <div className="flex flex-col items-center justify-center h-[30rem]">
-        <p className="text-neutral-600 dark:text-neutral-200 text-xs sm:text-base">
+      <div className="flex flex-col items-center justify-center h-[250px] sm:h-[30rem]">
+        <p className="text-neutral-600 dark:text-neutral-200 text-sm">
           Igniting Digital Brand Experiences.
         </p>
         <TypewriterEffectSmooth words={words} />
@@ -57,7 +57,7 @@ export default function Home() {
           </button>
         </div>
       </div>
-      <div className="grid sm:grid-cols-3 grid-cols-1 dark:bg-gray-950 bg-blue-300 gap-10 rounded-lg py-8 px-4 sm:mx-20 mx-0">
+      <div className="grid sm:grid-cols-3 grid-cols-1 dark:bg-gray-950 gap-10 rounded-lg py-8 px-4 sm:mx-20 mx-0">
         {goals.map((item) => {
           return (
             <div className="flex gap-2" key={item.heading}>
@@ -65,10 +65,10 @@ export default function Home() {
                 {item.icon}
               </div>
               <div>
-                <h6 className="text-blue-900 dark:text-blue-500 font-semibold text-xl mb-1">
+                <h6 className="text-stone-900 dark:text-blue-500 font-semibold text-lg mb-1">
                   {item.heading}
                 </h6>
-                <p className="text-base text-gray-600 dark:text-gray-300">
+                <p className="text-sm text-gray-600 dark:text-gray-300">
                   {item.text}
                 </p>
               </div>

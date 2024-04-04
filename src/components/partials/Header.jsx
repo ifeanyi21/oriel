@@ -18,7 +18,11 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const pathname = usePathname();
 
-  const menuItems = ["Home", "Services", "Contact us"];
+  const menuItems = [
+    { name: "Home", path: "/" },
+    { name: "Services", path: "/services" },
+    { name: "Contact us", path: "/contact" },
+  ];
 
   return (
     <Navbar
@@ -66,19 +70,8 @@ export default function Header() {
       <NavbarMenu>
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
-            <Link
-              color={
-                index === 2
-                  ? "primary"
-                  : index === menuItems.length - 1
-                  ? "danger"
-                  : "foreground"
-              }
-              className="w-full"
-              href="#"
-              size="lg"
-            >
-              {item}
+            <Link className="w-full" href={item.path} size="lg">
+              {item.name}
             </Link>
           </NavbarMenuItem>
         ))}

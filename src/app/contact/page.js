@@ -33,17 +33,10 @@ const Contact = () => {
     try {
       e.preventDefault();
       setLoading(true);
-      console.log(emailData);
-      // emailjs.send("service_19kpzrf", "template_lxyos6q", emailData).then(
-      //   (response) => {
-      //     console.log("SUCCESS!", response.status, response.text);
-      //   },
-      //   (error) => {
-      //     console.log("FAILED...", error);
-      //   }
-      // );
     } catch (error) {
       console.log(error);
+    } finally {
+      setLoading(false);
     }
   };
 
