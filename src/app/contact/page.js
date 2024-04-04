@@ -1,6 +1,7 @@
+"use client";
 import Layout from "@/components/partials/layout";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import Background from "@/assests/images/bg1.png";
 import {
   Card,
@@ -14,6 +15,38 @@ import {
 } from "@nextui-org/react";
 
 const Contact = () => {
+  const [loading, setLoading] = useState(false);
+  const [emailData, setEmailData] = useState({
+    name: "",
+    company: "",
+    email: "",
+    subject: "",
+    message: "",
+    number: "",
+  });
+
+  const handleChange = (e) => {
+    setEmailData({ ...emailData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    try {
+      e.preventDefault();
+      setLoading(true);
+      console.log(emailData);
+      // emailjs.send("service_19kpzrf", "template_lxyos6q", emailData).then(
+      //   (response) => {
+      //     console.log("SUCCESS!", response.status, response.text);
+      //   },
+      //   (error) => {
+      //     console.log("FAILED...", error);
+      //   }
+      // );
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <Layout>
       <div className="relative">
@@ -82,7 +115,7 @@ const Contact = () => {
         </Card>
       </div>
       <div className="flex justify-center mt-16">
-        <form className="pr-20">
+        <form className="px-10" onSubmit={handleSubmit}>
           <h2 className="text-base font-semibold leading-7 uppercase">
             Send us message
           </h2>
@@ -90,20 +123,58 @@ const Contact = () => {
             Ready to take your marketing to the next level?
           </p>
           <div className="flex w-full flex-wrap md:flex-nowrap mb-6 gap-4">
-            <Input type="text" variant={"underlined"} label="Name" />
-            <Input type="text" variant={"underlined"} label="Company" />
+            <Input
+              type="text"
+              variant={"underlined"}
+              label="Name"
+              name="name"
+              onChange={handleChange}
+            />
+            <Input
+              type="text"
+              variant={"underlined"}
+              label="Company"
+              name="company"
+              onChange={handleChange}
+            />
           </div>
           <div className="flex w-full flex-wrap md:flex-nowrap mb-6 gap-4">
-            <Input type="text" variant={"underlined"} label="Phone Number" />
-            <Input type="email" variant={"underlined"} label="Email" />
+            <Input
+              type="text"
+              variant={"underlined"}
+              label="Phone Number"
+              name="number"
+              onChange={handleChange}
+            />
+            <Input
+              type="email"
+              variant={"underlined"}
+              label="Email"
+              name="email"
+              onChange={handleChange}
+            />
           </div>
           <div className="flex w-full flex-wrap md:flex-nowrap mb-6 gap-4">
-            <Input type="text" variant={"underlined"} label="Subject" />
+            <Input
+              type="text"
+              variant={"underlined"}
+              label="Subject"
+              name="subject"
+              onChange={handleChange}
+            />
           </div>
           <div className="flex w-full flex-wrap md:flex-nowrap mb-6 gap-4">
-            <Textarea type="text" variant={"underlined"} label="Message" />
+            <Textarea
+              type="text"
+              variant={"underlined"}
+              label="Message"
+              name="message"
+              onChange={handleChange}
+            />
           </div>
-          <Button color="primary">Send us a message</Button>
+          <Button type="submit" color="primary" isLoading={loading}>
+            {loading ? "Sending..." : "Send us a message"}
+          </Button>
         </form>
       </div>
     </Layout>
