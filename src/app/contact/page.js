@@ -1,0 +1,113 @@
+import Layout from "@/components/partials/layout";
+import Image from "next/image";
+import React from "react";
+import Background from "@/assests/images/bg1.png";
+import {
+  Card,
+  CardHeader,
+  CardFooter,
+  Divider,
+  Link,
+  Input,
+  Textarea,
+  Button,
+} from "@nextui-org/react";
+
+const Contact = () => {
+  return (
+    <Layout>
+      <div className="relative">
+        <Image
+          src={Background}
+          className="w-full h-80"
+          alt="Services"
+          width={500}
+          height={500}
+        />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="text-center text-white">
+            <h1 className="font-bold text-5xl">Contact Us</h1>
+            <p className="text-base mt-8 px-2">
+              Start the conversation to established good relationship and
+              business.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="bg-blue-200 sm:my-20 my-10 md:py-24 py-8">
+        <div className="sm:flex md:mx-20 p-3">
+          <div className="sm:border-l-2 border-blue-500 sm:pl-5">
+            <h2 className="sm:text-base text-sm uppercase font-semibold leading-7 text-blue-500">
+              Get in touch
+            </h2>
+            <div className="text-stone-900 font-semibold sm:text-5xl text-xl">
+              Seamless Communication, Global Impact.
+            </div>
+          </div>
+          <div className="text-gray-600 md:w-[500px]">
+            {`Connect with our friendly
+            team today. We're ready to listen, understand your unique
+            requirements, and provide tailored solutions that exceed your
+            expectations.`}
+          </div>
+        </div>
+      </div>
+      <div className="grid sm:grid-cols-2 grid-cols-1 gap-10 sm:mx-20 mx-5 sm:mt-20 mt-10">
+        <Card className="mb-2">
+          <CardHeader className="flex gap-3">
+            <div className="flex flex-col">
+              <p className="text-md">{`Let's Talk.`}</p>
+            </div>
+          </CardHeader>
+          <Divider />
+          <CardFooter>
+            <Link isExternal showAnchorIcon href="tel:+2348064482085">
+              +234 806 448 2085
+            </Link>
+          </CardFooter>
+        </Card>
+        <Card className="mb-2">
+          <CardHeader className="flex gap-3">
+            <div className="flex flex-col">
+              <p className="text-md">{`Email us.`}</p>
+            </div>
+          </CardHeader>
+          <Divider />
+          <CardFooter>
+            <Link isExternal showAnchorIcon href="mailto:aayodele027@gmail.com">
+              Aayodele027@gmail.com
+            </Link>
+          </CardFooter>
+        </Card>
+      </div>
+      <div className="flex justify-center mt-16">
+        <form className="pr-20">
+          <h2 className="text-base font-semibold leading-7 uppercase">
+            Send us message
+          </h2>
+          <p className="mt-2 text-3xl font-bold tracking-tight dark:text-white text-gray-900 sm:text-4xl mb-10">
+            Ready to take your marketing to the next level?
+          </p>
+          <div className="flex w-full flex-wrap md:flex-nowrap mb-6 gap-4">
+            <Input type="text" variant={"underlined"} label="Name" />
+            <Input type="text" variant={"underlined"} label="Company" />
+          </div>
+          <div className="flex w-full flex-wrap md:flex-nowrap mb-6 gap-4">
+            <Input type="text" variant={"underlined"} label="Phone Number" />
+            <Input type="email" variant={"underlined"} label="Email" />
+          </div>
+          <div className="flex w-full flex-wrap md:flex-nowrap mb-6 gap-4">
+            <Input type="text" variant={"underlined"} label="Subject" />
+          </div>
+          <div className="flex w-full flex-wrap md:flex-nowrap mb-6 gap-4">
+            <Textarea type="text" variant={"underlined"} label="Message" />
+          </div>
+          <Button color="primary">Send us a message</Button>
+        </form>
+      </div>
+    </Layout>
+  );
+};
+
+export default Contact;
