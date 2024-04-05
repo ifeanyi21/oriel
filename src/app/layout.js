@@ -1,10 +1,10 @@
-import { Poppins } from "next/font/google";
+import { Syne } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
 
-const roboto = Poppins({
-  weight: ["100", "300", "400", "500", "700", "900"],
-  style: ["normal", "italic"],
+const roboto = Syne({
+  weight: ["400", "500", "600", "700", "800"],
+  style: ["normal"],
   subsets: ["latin"],
 });
 

@@ -4,7 +4,7 @@ import Footer from "./Footer";
 
 const Layout = ({ children }) => {
   return (
-    <main className="overflow-x-hidden">
+    <main className="overflow-x-hidden bg-[#FFE9DF]">
       <Header />
       <div className="my-16">{children}</div>
       <Footer />

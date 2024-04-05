@@ -1,7 +1,6 @@
 import Layout from "@/components/partials/layout";
 import Image from "next/image";
 import React from "react";
-import Background from "@/assests/images/services.jpeg";
 import SocialServiceImage from "@/assests/images/bg.png";
 import Events from "@/assests/images/events.jpeg";
 import Branding from "@/assests/images/branding.jpeg";
@@ -26,18 +25,12 @@ const Services = () => {
   ];
   return (
     <Layout>
-      <div className="relative">
-        <Image
-          src={Background}
-          className="w-full h-80"
-          alt="Services"
-          width={500}
-          height={500}
-        />
+      <div className="h-80 w-full bg-transparent  dark:bg-grid-white/[0.2] bg-grid-black/[0.2] relative flex items-center justify-center">
+        <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center text-white">
-            <h1 className="font-bold text-5xl">Services</h1>
-            <p className="text-base mt-8">
+          <div className="text-center text-black">
+            <h1 className="font-bold md:text-5xl text-xl">Services</h1>
+            <p className="text-base mt-4">
               We are Connecting you with Digital life.
             </p>
           </div>
@@ -117,8 +110,7 @@ const Services = () => {
                   </h4>
                 </CardHeader>
                 <Image
-                  removeWrapper
-                  alt="Card example background"
+                  alt="background"
                   className="z-0 w-full h-full scale-125 -translate-y-6 object-cover"
                   src={item.image}
                 />

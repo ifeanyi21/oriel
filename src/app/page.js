@@ -9,6 +9,7 @@ import Lottie from "lottie-react";
 import Animation from "../assests/animations/Media.json";
 import { useRouter } from "next/navigation";
 import TextAnimatedGradient from "@/components/ui/AnimatedText";
+import Banner from "@/assests/images/background4.png";
 
 export default function Home() {
   const { push } = useRouter();
@@ -18,7 +19,7 @@ export default function Home() {
     },
     {
       text: "ORIEL.",
-      className: "text-blue-500 dark:text-blue-500",
+      className: "text-blue-500 dark:text-blue-500 font-bold",
     },
   ];
 
@@ -26,29 +27,38 @@ export default function Home() {
     {
       heading: "Promote Your Product & Brand.",
       text: "Elevate your brand visibility and product recognition through strategic marketing campaigns.",
-      icon: <IoStar className="sm:h-20 sm:w-20 h-10 w-10 p-3 text-blue-500" />,
+      icon: <IoStar className="sm:h-20 sm:w-20 h-10 w-10 p-3 text-[#FB6D48]" />,
     },
     {
       heading: "Growing & Scale Up Businesses",
       text: "Unlock sustainable growth and scalability for your business with data-driven strategies.",
       icon: (
-        <PiChartLineUpBold className="sm:h-20 sm:w-20 h-10 w-10 p-3 text-blue-500" />
+        <PiChartLineUpBold className="sm:h-20 sm:w-20 h-10 w-10 p-3 text-[#FB6D48]" />
       ),
     },
     {
       heading: "Success Campaign on Social",
       text: "Craft compelling social media campaigns that resonate with your target audience.",
-      icon: <BsStars className="sm:h-20 sm:w-20 h-10 w-10 p-3 text-blue-500" />,
+      icon: (
+        <BsStars className="sm:h-20 sm:w-20 h-10 w-10 p-3 text-[#FB6D48]" />
+      ),
     },
   ];
   return (
     <Layout>
-      <div className="md:h-[40rem] h-[70vh] w-full dark:bg-black bg-white  dark:bg-grid-white/[0.2] bg-grid-black/[0.2] relative flex items-center justify-center">
-        <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
-        <div className="flex flex-col items-center justify-center h-[250px] sm:h-[22rem]">
+      <div className="relative">
+        <Image
+          src={Banner}
+          className="w-full h-[500px] object-cover"
+          priority
+          width={500}
+          height={500}
+          alt="Banner"
+        />
+        <div className="flex absolute inset-0 flex-col items-center justify-center h-[250px] sm:h-[22rem]">
           <TypewriterEffectSmooth words={words} />
-          <p className="text-neutral-600 font-medium dark:text-neutral-200 text-base">
-            Igniting Digital Brand Experiences.
+          <p className="text-black font-medium dark:text-neutral-200 md:text-7xl text-3xl text-center lg:w-[900px]">
+            Building a Loyal Audience Base for Every Brand
           </p>
         </div>
       </div>

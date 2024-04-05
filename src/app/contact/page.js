@@ -43,18 +43,12 @@ const Contact = () => {
 
   return (
     <Layout>
-      <div className="relative">
-        <Image
-          src={Background}
-          className="w-full h-80"
-          alt="Services"
-          width={500}
-          height={500}
-        />
+      <div className="h-80 w-full bg-transparent  dark:bg-grid-white/[0.2] bg-grid-black/[0.2] relative flex items-center justify-center">
+        <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center text-white">
-            <h1 className="font-bold text-5xl">Contact Us</h1>
-            <p className="text-base mt-8 px-2">
+          <div className="text-center text-black">
+            <h1 className="font-bold md:text-5xl text-xl">Contact Us</h1>
+            <p className="text-base mt-4">
               Start the conversation to established good relationship and
               business.
             </p>
@@ -62,7 +56,7 @@ const Contact = () => {
         </div>
       </div>
 
-      <div className="bg-blue-200 sm:my-20 my-10 md:py-24 py-8">
+      <div className="bg-black text-white sm:mb-20 mb-10 md:py-24 py-8">
         <div className="sm:flex md:mx-20 p-3 gap-10">
           <div className="sm:border-l-2 border-blue-500 sm:pl-5">
             <TextAnimatedGradient
@@ -71,11 +65,11 @@ const Contact = () => {
                 "sm:text-base text-sm !uppercase font-semibold leading-7"
               }
             />
-            <div className="text-stone-900 font-semibold sm:text-3xl text-xl">
+            <div className="text-white font-semibold sm:text-3xl text-xl">
               Seamless Communication, Global Impact.
             </div>
           </div>
-          <div className="text-gray-600 md:w-[500px]">
+          <div className="text-white md:w-[500px]">
             {`Connect with our friendly
             team today. We're ready to listen, understand your unique
             requirements, and provide tailored solutions that exceed your
@@ -169,7 +163,11 @@ const Contact = () => {
               onChange={handleChange}
             />
           </div>
-          <Button type="submit" color="primary" isLoading={loading}>
+          <Button
+            type="submit"
+            className="bg-black text-white"
+            isLoading={loading}
+          >
             {loading ? "Sending..." : "Send us a message"}
           </Button>
         </form>

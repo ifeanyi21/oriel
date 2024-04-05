@@ -26,7 +26,7 @@ module.exports = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       animation: {
-        "text-gradient": "text-gradient 1.5s linear infinite",
+        "text-gradient": "text-gradient 3.5s linear infinite",
       },
       keyframes: {
         "text-gradient": {
