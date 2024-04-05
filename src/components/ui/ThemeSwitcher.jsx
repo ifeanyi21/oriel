@@ -3,10 +3,10 @@ import { useTheme } from "next-themes";
 import { IoMoonOutline, IoSunnyOutline } from "react-icons/io5";
 
 export function ThemeSwitcher() {
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme } = useTheme("dark");
 
   const handleChange = () => {
-    setTheme(prevTheme === "light" ? "dark" : "light");
+    setTheme((prevTheme) => (prevTheme === "dark" ? "light" : "dark"));
   };
   return (
     <div>

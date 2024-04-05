@@ -1,14 +1,16 @@
 "use client";
 
-import { NextUIProvider } from "@nextui-org/react";
-import { ThemeProvider } from "next-themes";
+import * as React from "react";
+import { NextUIProvider } from "@nextui-org/system";
+import { useRouter } from "next/navigation";
+import { ThemeProvider as NextThemesProvider } from "next-themes";
 
-export function Providers({ children }) {
+export function Providers({ children, themeProps }) {
   return (
     <NextUIProvider>
-      {/* <ThemeProvider attribute="class" enableSystem> */}
+      {/* <NextThemesProvider {...themeProps}> */}
       {children}
-      {/* </ThemeProvider> */}
+      {/* </NextThemesProvider> */}
     </NextUIProvider>
   );
 }

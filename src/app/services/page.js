@@ -1,41 +1,15 @@
 import Layout from "@/components/partials/layout";
 import Image from "next/image";
 import React from "react";
-import Background from "@/assests/images/bg1.png";
+import Background from "@/assests/images/services.jpeg";
 import SocialServiceImage from "@/assests/images/bg.png";
 import Events from "@/assests/images/events.jpeg";
 import Branding from "@/assests/images/branding.jpeg";
 import Public from "@/assests/images/publicimage.jpeg";
-import { IoStar } from "react-icons/io5";
-import { PiChartLineUpBold } from "react-icons/pi";
-import { BsStars } from "react-icons/bs";
-import {
-  Card,
-  CardHeader,
-  CardBody,
-  CardFooter,
-  Button,
-} from "@nextui-org/react";
+import { Card, CardHeader, CardFooter, Button } from "@nextui-org/react";
+import TextAnimatedGradient from "@/components/ui/AnimatedText";
 
 const Services = () => {
-  const goals = [
-    {
-      heading: "Promote Your Product & Brand.",
-      text: "Elevate your brand visibility and product recognition through strategic marketing campaigns.",
-      icon: <IoStar className="sm:h-10 sm:w-10 text-blue-500" />,
-    },
-    {
-      heading: "Growing & Scale Up Businesses",
-      text: "Unlock sustainable growth and scalability for your business with data-driven strategies.",
-      icon: <PiChartLineUpBold className="sm:h-10 sm:w-10 text-blue-500" />,
-    },
-    {
-      heading: "Success Campaign on Social",
-      text: "Craft compelling social media campaigns that resonate with your target audience.",
-      icon: <BsStars className="sm:h-10 sm:w-10 text-blue-500" />,
-    },
-  ];
-
   const services = [
     {
       header: `Public Relations`,
@@ -74,13 +48,18 @@ const Services = () => {
           <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
             <div className={`lg:pr-8 lg:pt-4 `}>
               <div className="lg:max-w-lg">
-                <h2 className="text-base font-semibold leading-7 text-blue-500">
-                  What we offer
+                <h2 className="text-lg font-semibold leading-7">
+                  Why use{" "}
+                  <TextAnimatedGradient
+                    text={"ORIEL"}
+                    className={"!text-lg font-bold "}
+                  />
+                  ?
                 </h2>
-                <p className="mt-2 text-3xl font-bold tracking-tight text-stone-950 dark:text-white sm:text-4xl">
+                <p className="mt-2 text-3xl font-medium tracking-tight text-stone-950 dark:text-white sm:text-4xl">
                   Get the best and most creative results.
                 </p>
-                <p className="mt-6 text-lg leading-7 text-gray-600 dark:text-gray-300">
+                <p className="mt-6 sm:text-base text-sm sm:leading-8 leading-6 text-gray-600 dark:text-gray-300">
                   Unlock your full potential and achieve unparalleled success
                   with our expert services. We combine cutting-edge strategies,
                   creativity, and industry insights to deliver tailored
@@ -90,26 +69,6 @@ const Services = () => {
                   Get ready to experience the best and most creative outcomes
                   that exceed your expectations.
                 </p>
-
-                <div className="mt-8">
-                  {goals.map((item) => {
-                    return (
-                      <div className="flex gap-2 mb-8" key={item.heading}>
-                        <div className="flex justify-center items-center rounded-full">
-                          {item.icon}
-                        </div>
-                        <div>
-                          <h6 className="text-stone-950 dark:text-stone-300 font-semibold text-xl mb-1">
-                            {item.heading}
-                          </h6>
-                          <p className="text-base text-gray-600 dark:text-gray-300">
-                            {item.text}
-                          </p>
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
                 <dl className="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none"></dl>
               </div>
             </div>
@@ -124,16 +83,19 @@ const Services = () => {
         </div>
       </div>
       <div className="bg-blue-200 md:py-24 py-8">
-        <div className="sm:flex md:mx-20 p-3">
+        <div className="sm:flex gap-10 md:mx-20 p-3">
           <div className="sm:border-l-2 border-blue-500 sm:pl-5">
-            <h2 className="sm:text-base text-sm uppercase font-semibold leading-7 text-blue-500">
-              Our Services
-            </h2>
-            <div className="text-stone-900 font-semibold sm:text-5xl text-xl">
+            <TextAnimatedGradient
+              text={"Our Services"}
+              className={
+                "sm:text-base text-sm !uppercase font-semibold leading-7"
+              }
+            />
+            <div className="text-stone-900 font-medium sm:text-3xl text-xl">
               Strategic Social Media Marketing for Unmatched Business Growth.
             </div>
           </div>
-          <div className="text-gray-600 dark:text-black md:w-[600px]">
+          <div className="text-gray-600 sm:mt-0 mt-5 sm:text-base text-sm sm:leading-8 leading-6 dark:text-black">
             Harness the power of strategic social media marketing to propel your
             business to unprecedented heights. Our data-driven approach crafts
             targeted campaigns that captivate your ideal audience, fostering

@@ -6,20 +6,21 @@ const roboto = Poppins({
   weight: ["100", "300", "400", "500", "700", "900"],
   style: ["normal", "italic"],
   subsets: ["latin"],
-  display: "swap",
 });
 
 export const metadata = {
-  title: "ORIEL",
+  title: "ORIEL - Igniting Digital Brand Experiences.",
   description:
     "Unlock your full potential and achieve unparalleled success with our expert services. We combine cutting-edge strategies, creativity, and industry insights to deliver tailored solutions that drive exceptional results. Partnering with us ensures you receive innovative, impactful, and highly effective solutions that propel your business to new heights.",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="light">
+    <html lang="en">
       <body className={roboto.className}>
-        <Providers>{children}</Providers>
+        <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
+          {children}
+        </Providers>
       </body>
     </html>
   );

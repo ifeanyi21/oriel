@@ -2,7 +2,7 @@
 import Layout from "@/components/partials/layout";
 import Image from "next/image";
 import React, { useState } from "react";
-import Background from "@/assests/images/bg1.png";
+import Background from "@/assests/images/services.jpeg";
 import {
   Card,
   CardHeader,
@@ -13,6 +13,7 @@ import {
   Textarea,
   Button,
 } from "@nextui-org/react";
+import TextAnimatedGradient from "@/components/ui/AnimatedText";
 
 const Contact = () => {
   const [loading, setLoading] = useState(false);
@@ -62,12 +63,15 @@ const Contact = () => {
       </div>
 
       <div className="bg-blue-200 sm:my-20 my-10 md:py-24 py-8">
-        <div className="sm:flex md:mx-20 p-3">
+        <div className="sm:flex md:mx-20 p-3 gap-10">
           <div className="sm:border-l-2 border-blue-500 sm:pl-5">
-            <h2 className="sm:text-base text-sm uppercase font-semibold leading-7 text-blue-500">
-              Get in touch
-            </h2>
-            <div className="text-stone-900 font-semibold sm:text-5xl text-xl">
+            <TextAnimatedGradient
+              text={"Get in touch"}
+              className={
+                "sm:text-base text-sm !uppercase font-semibold leading-7"
+              }
+            />
+            <div className="text-stone-900 font-semibold sm:text-3xl text-xl">
               Seamless Communication, Global Impact.
             </div>
           </div>
@@ -107,7 +111,7 @@ const Contact = () => {
           </CardFooter>
         </Card>
       </div>
-      <div className="flex justify-center mt-16">
+      <div className="flex justify-center mt-16 py-10">
         <form className="px-10" onSubmit={handleSubmit}>
           <h2 className="text-base font-semibold leading-7 uppercase">
             Send us message
