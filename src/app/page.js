@@ -10,6 +10,7 @@ import Animation from "../assests/animations/Media.json";
 import { useRouter } from "next/navigation";
 import TextAnimatedGradient from "@/components/ui/AnimatedText";
 import Banner from "@/assests/images/background4.png";
+import AnimationComponent from "@/components/ui/AnimationComponent";
 
 export default function Home() {
   const { push } = useRouter();
@@ -49,7 +50,7 @@ export default function Home() {
       <div className="relative">
         <Image
           src={Banner}
-          className="w-full h-[500px] object-cover"
+          className="w-full h-[190px] md:h-[500px] object-cover"
           priority
           width={500}
           height={500}
@@ -82,35 +83,38 @@ export default function Home() {
           );
         })}
       </div>
-      <div className="overflow-hidden py-24 sm:py-32 rounded">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
-            <div className={`lg:pr-8 lg:pt-4 `}>
-              <div className="lg:max-w-lg">
-                <TextAnimatedGradient
-                  text={"Brand Values"}
-                  className={"text-3xl font-medium "}
-                />
-                <p className="mt-6 sm:text-base text-sm sm:leading-8 leading-7 text-gray-600 dark:text-gray-300">
-                  Oriel is a dynamic and innovative media agency dedicated to
-                  providing top-tier design and marketing solutions. With a
-                  commitment to excellence, the brand is synonymous with
-                  timeless quality, reliability, world-class creativity, and
-                  unbeatable value for investment.
-                </p>
-                <dl className="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none"></dl>
-                <button
-                  className="w-40 h-10 rounded-xl bg-black border dark:border-white border-transparent text-white text-sm"
-                  onClick={() => push("/services")}
-                >
-                  Learn more
-                </button>
+
+      <AnimationComponent>
+        <div className="overflow-hidden py-24 sm:py-32 rounded">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+              <div className={`lg:pr-8 lg:pt-4 `}>
+                <div className="lg:max-w-lg">
+                  <TextAnimatedGradient
+                    text={"Brand Values"}
+                    className={"text-3xl font-medium "}
+                  />
+                  <p className="mt-6 sm:text-base text-sm sm:leading-8 leading-7 text-gray-600 dark:text-gray-300">
+                    Oriel is a dynamic and innovative media agency dedicated to
+                    providing top-tier design and marketing solutions. With a
+                    commitment to excellence, the brand is synonymous with
+                    timeless quality, reliability, world-class creativity, and
+                    unbeatable value for investment.
+                  </p>
+                  <dl className="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none"></dl>
+                  <button
+                    className="w-40 h-10 rounded-xl bg-black border dark:border-white border-transparent text-white text-sm"
+                    onClick={() => push("/services")}
+                  >
+                    Learn more
+                  </button>
+                </div>
               </div>
+              <Lottie animationData={Animation} className="h-96" loop={true} />
             </div>
-            <Lottie animationData={Animation} className="h-96" loop={true} />
           </div>
         </div>
-      </div>
+      </AnimationComponent>
     </Layout>
   );
 }
