@@ -75,7 +75,7 @@ const Services = () => {
           </div>
         </div>
       </div>
-      <div className="bg-blue-200 md:py-24 py-8">
+      <div className="bg-black md:py-24 py-8">
         <div className="sm:flex gap-10 md:mx-20 p-3">
           <div className="sm:border-l-2 border-blue-500 sm:pl-5">
             <TextAnimatedGradient
@@ -84,11 +84,11 @@ const Services = () => {
                 "sm:text-base text-sm !uppercase font-semibold leading-7"
               }
             />
-            <div className="text-stone-900 font-medium sm:text-3xl text-xl">
+            <div className="text-white font-medium sm:text-3xl text-xl">
               Strategic Social Media Marketing for Unmatched Business Growth.
             </div>
           </div>
-          <div className="text-gray-600 sm:mt-0 mt-5 sm:text-base text-sm sm:leading-8 leading-6 dark:text-black">
+          <div className="text-white sm:mt-0 mt-5 sm:text-base text-sm sm:leading-8 leading-6 dark:text-white">
             Harness the power of strategic social media marketing to propel your
             business to unprecedented heights. Our data-driven approach crafts
             targeted campaigns that captivate your ideal audience, fostering
@@ -116,8 +116,7 @@ const Services = () => {
                 />
                 <CardFooter className="absolute bg-white/30 bottom-0 border-t-1 border-zinc-100/50 z-10 justify-end">
                   <Button
-                    className="text-tiny"
-                    color="primary"
+                    className="text-tiny bg-[#FFE9DF]"
                     radius="full"
                     size="sm"
                   >

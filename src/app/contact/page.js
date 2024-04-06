@@ -14,6 +14,7 @@ import {
   Button,
 } from "@nextui-org/react";
 import TextAnimatedGradient from "@/components/ui/AnimatedText";
+import Banner from "@/assests/images/background.png";
 
 const Contact = () => {
   const [loading, setLoading] = useState(false);
@@ -105,72 +106,83 @@ const Contact = () => {
           </CardFooter>
         </Card>
       </div>
-      <div className="flex justify-center mt-16 py-10">
-        <form className="px-10" onSubmit={handleSubmit}>
-          <h2 className="text-base font-semibold leading-7 uppercase">
-            Send us a message.
-          </h2>
-          <p className="mt-2 text-3xl font-bold tracking-tight dark:text-white text-gray-900 sm:text-4xl mb-10">
-            Ready to take your marketing to the next level?
-          </p>
-          <div className="flex w-full flex-wrap md:flex-nowrap mb-6 gap-4">
-            <Input
-              type="text"
-              variant={"underlined"}
-              label="Name"
-              name="name"
-              onChange={handleChange}
+      <div className="relative mt-16 py-10 h-[700px] md:h-[500px]">
+        <Image
+          src={Banner}
+          className="w-full h-[300px] md:h-[500px] object-cover object-bottom"
+          priority
+          width={500}
+          height={500}
+          alt="Banner"
+        />
+        <div className="absolute inset-0 flex-col items-center flex justify-center">
+          <form className="px-10" onSubmit={handleSubmit}>
+            <TextAnimatedGradient
+              text={"Send us a message."}
+              className={"!text-base font-semibold leading-7 uppercase"}
             />
-            <Input
-              type="text"
-              variant={"underlined"}
-              label="Company"
-              name="company"
-              onChange={handleChange}
-            />
-          </div>
-          <div className="flex w-full flex-wrap md:flex-nowrap mb-6 gap-4">
-            <Input
-              type="text"
-              variant={"underlined"}
-              label="Phone Number"
-              name="number"
-              onChange={handleChange}
-            />
-            <Input
-              type="email"
-              variant={"underlined"}
-              label="Email"
-              name="email"
-              onChange={handleChange}
-            />
-          </div>
-          <div className="flex w-full flex-wrap md:flex-nowrap mb-6 gap-4">
-            <Input
-              type="text"
-              variant={"underlined"}
-              label="Subject"
-              name="subject"
-              onChange={handleChange}
-            />
-          </div>
-          <div className="flex w-full flex-wrap md:flex-nowrap mb-6 gap-4">
-            <Textarea
-              type="text"
-              variant={"underlined"}
-              label="Message"
-              name="message"
-              onChange={handleChange}
-            />
-          </div>
-          <Button
-            type="submit"
-            className="bg-black text-white"
-            isLoading={loading}
-          >
-            {loading ? "Sending..." : "Send us a message"}
-          </Button>
-        </form>
+            <p className="mt-2 text-3xl font-bold tracking-tight dark:text-white text-gray-900 sm:text-4xl mb-10">
+              Ready to take your marketing to the next level?
+            </p>
+            <div className="flex w-full flex-wrap md:flex-nowrap mb-6 gap-4">
+              <Input
+                type="text"
+                variant={"underlined"}
+                label="Name"
+                name="name"
+                onChange={handleChange}
+              />
+              <Input
+                type="text"
+                variant={"underlined"}
+                label="Company"
+                name="company"
+                onChange={handleChange}
+              />
+            </div>
+            <div className="flex w-full flex-wrap md:flex-nowrap mb-6 gap-4">
+              <Input
+                type="text"
+                variant={"underlined"}
+                label="Phone Number"
+                name="number"
+                onChange={handleChange}
+              />
+              <Input
+                type="email"
+                variant={"underlined"}
+                label="Email"
+                name="email"
+                onChange={handleChange}
+              />
+            </div>
+            <div className="flex w-full flex-wrap md:flex-nowrap mb-6 gap-4">
+              <Input
+                type="text"
+                variant={"underlined"}
+                label="Subject"
+                name="subject"
+                onChange={handleChange}
+              />
+            </div>
+            <div className="flex w-full flex-wrap md:flex-nowrap mb-6 gap-4">
+              <Textarea
+                type="text"
+                variant={"underlined"}
+                label="Message"
+                name="message"
+                onChange={handleChange}
+              />
+            </div>
+            <Button
+              type="submit"
+              className="bg-black text-white"
+              isLoading={loading}
+            >
+              {loading ? "Sending..." : "Send us a message"}
+            </Button>
+          </form>
+        </div>
       </div>
     </Layout>
   );

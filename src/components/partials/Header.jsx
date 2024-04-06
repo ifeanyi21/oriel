@@ -44,7 +44,7 @@ export default function Header() {
       <NavbarContent className="hidden sm:flex gap-10" justify="center">
         <NavbarItem isActive>
           <Link
-            className={pathname === "/" ? "text-blue-500" : "font-medium"}
+            className={pathname === "/" ? "text-[#FB6D48]" : "font-medium"}
             href="/"
           >
             Home
@@ -53,7 +53,7 @@ export default function Header() {
         <NavbarItem isActive>
           <Link
             className={
-              pathname.includes("services") ? "text-blue-500" : "font-medium"
+              pathname.includes("services") ? "text-[#FB6D48]" : "font-medium"
             }
             href="/services"
           >
@@ -63,7 +63,7 @@ export default function Header() {
         <NavbarItem isActive>
           <Link
             className={
-              pathname.includes("contact") ? "text-blue-500" : "font-medium"
+              pathname.includes("contact") ? "text-[#FB6D48]" : "font-medium"
             }
             href="/contact"
           >
