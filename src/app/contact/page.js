@@ -108,7 +108,7 @@ const Contact = () => {
       <div className="flex justify-center mt-16 py-10">
         <form className="px-10" onSubmit={handleSubmit}>
           <h2 className="text-base font-semibold leading-7 uppercase">
-            Send us message
+            Send us a message.
           </h2>
           <p className="mt-2 text-3xl font-bold tracking-tight dark:text-white text-gray-900 sm:text-4xl mb-10">
             Ready to take your marketing to the next level?
