@@ -2,7 +2,7 @@ import { Syne } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
 
-const roboto = Syne({
+const font = Syne({
   weight: ["400", "500", "600", "700", "800"],
   style: ["normal"],
   subsets: ["latin"],
@@ -17,7 +17,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={roboto.className}>
+      <body className={font.className}>
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
           {children}
         </Providers>
