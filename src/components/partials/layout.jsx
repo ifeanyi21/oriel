@@ -8,7 +8,7 @@ const Layout = ({ children }) => {
     <main className="overflow-x-hidden bg-[#FFE9DF]">
       <Header />
       <div className="my-16">{children}</div>
-      <LiveChat />
+      {/* <LiveChat /> */}
       <Footer />
     </main>
   );
