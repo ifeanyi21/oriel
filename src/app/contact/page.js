@@ -50,7 +50,7 @@ const Contact = () => {
           <div className="text-center text-black">
             <h1 className="font-bold md:text-5xl text-xl">Contact Us</h1>
             <p className="text-base mt-4">
-              Start the conversation to established good relationship and
+              Start the conversation to establish good relationship and
               business.
             </p>
           </div>
